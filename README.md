@@ -19,7 +19,7 @@ We propose to analyse the evolution of the network using the balance and status 
 
 
 We propose to use the reddit dataset (which can be found here: https://snap.stanford.edu/data/soc-RedditHyperlinks.html). This dataset contains the hyperlink network representing the connection between subreddits, from January 2014 to April 2017. The nodes are represented by the different subreddits, and each edge corresponds to the hyperlink between subreddits appearing in each post. 
-Therefore an edge might appear several times and we need to figure out how to assign a timestamp to each one of them. Without double-counting the edges that appears multiple times, there are a total of 55863 nodes, and 858490 edges. The network is directed and signed. The latter were obtained through sentimental analysis, and takes value in {-1,+1}. 
+Therefore an edge might appear several times and we need to figure out how to assign a timestamp to each one of them. If we double-count the edges that appears multiple times, there are a total of 55863 nodes, and 858488 edges. The network is directed and signed. The latter were obtained through sentimental analysis, and takes value in {-1,+1}. 
 Also, the graph has a temporal dimension that keeps track of the date at which each hyperlink was created.
 Another complementary dataset of the reddit hyperlink network can be found at http://snap.stanford.edu/data/web-RedditEmbeddings.html. It gives the embedding vectors for each subreddit. The embedding vectors are of size 300, and there is a total of 51278 vectors (so we might exclude some subreddit in the analysis).
 
