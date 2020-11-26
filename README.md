@@ -5,9 +5,9 @@
 The goal of the project is to explore the Reddit hyperlink network
 and in particular to assess if the balance and the status theories can be applied for this dataset.
 Also, we examine if the network exhibit locally the same behavior as the whole network. We will use the embedding vectors of the subreddits to group them into clusters,
- and check if the balance theory prevails over the status one inside these clusters. Also, there might be clusters for which the dominant theory is different than for some others.
+ and check if the balance theory prevails over the status one inside these clusters. Also, the dominant theory might be cluster dependent.
 One final important aspect is the temporal dimension of the network.
-We propose to analysis the evolution of the network using the balance and status theories, which might reveal structural changes as the network grows (the addition of new edges or the modification of the sign of a previous one).
+We propose to analyse the evolution of the network using the balance and status theories, which might reveal structural changes as the network grows (the addition of new edges or the modification of the sign of a previous one).
 
 ## Research Questions
 
@@ -18,8 +18,10 @@ We propose to analysis the evolution of the network using the balance and status
 ## Proposed dataset
 
 
-We propose to use the reddit dataset (which can be found here: https://snap.stanford.edu/data/soc-RedditHyperlinks.html). This dataset contains the hyperlink network representing the connection between subreddits, from January 2014 to April 2017. The nodes are represented by the different subreddits, and each edge corresponds to the hyperlink between subreddits appearing in each post. Therefore an edge might appear several times and we need to figure out how to assign a timestamp to each one of them. Without double-counting the edges that appears multiple times, there are a total of 55863 nodes, and 858490 edges. The network is directed and signed. The latter were obtained through sentimental analysis, and takes value in {-1,+1}. Also, the graph has a temporal dimension that keeps track of the date at which each hyperlink was created.
-Another complementary dataset of the reddit hyperlink network can be found at http://snap.stanford.edu/data/web-RedditEmbeddings.html. It gives the embedding vectors for each subreddit. The embedding is of size 300, and there are a total of 51278 vectors (so we might exclude some subreddit in the analysis).
+We propose to use the reddit dataset (which can be found here: https://snap.stanford.edu/data/soc-RedditHyperlinks.html). This dataset contains the hyperlink network representing the connection between subreddits, from January 2014 to April 2017. The nodes are represented by the different subreddits, and each edge corresponds to the hyperlink between subreddits appearing in each post. 
+Therefore an edge might appear several times and we need to figure out how to assign a timestamp to each one of them. Without double-counting the edges that appears multiple times, there are a total of 55863 nodes, and 858490 edges. The network is directed and signed. The latter were obtained through sentimental analysis, and takes value in {-1,+1}. 
+Also, the graph has a temporal dimension that keeps track of the date at which each hyperlink was created.
+Another complementary dataset of the reddit hyperlink network can be found at http://snap.stanford.edu/data/web-RedditEmbeddings.html. It gives the embedding vectors for each subreddit. The embedding vectors are of size 300, and there is a total of 51278 vectors (so we might exclude some subreddit in the analysis).
 
 ## Methods
 - *Whole dataset analysis: balance versus status theory.* We will perform similar analysis as described in the Signed Network paper. In particular, each configuration for the (un)directed triads will be counted and the proportions will be compared to what predict the two theories. We need to implement an algorithm to find these proportions that takes into account the timestamps.
